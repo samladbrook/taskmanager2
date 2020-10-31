@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        .test {
+            color: black;
+            font-family:"Comic Sans MS";
+        }
+        button {
+            font-size: 30px;
+            background-color: #d5f4e6;
+        }
+        body{
+            background-color: #d5f4e6;
+        }
+        .buttons{
+            align-self: center;
+        }
+        h1{
+            font-size: 70px;
+        }
+        a.button{ font-size:45px; display:inline-block; width:240px; height:60px; padding:5px; border:1.5px #D7D7D7 solid; text-align:center; text-decoration:none; color:#666666; background:url(button_bg.png) repeat-x; border-color: black;} a.button:hover{ background:url(button_bg_hover.png) repeat-x; text-decoration:none; }
+
+
+    </style>
+</head>
+<body>
+    
+
+    <center><h1 class="test">Welcome to Task Manager</h1>
+
+    <div class="buttons">
+        <a class="button" href='accounts/login'>Login</a>
+        <a class="button" href='accounts/register'>Register</a>
+
+    </div>
+
+    
+
+</body>
+</html>
+
+{% endblock %}

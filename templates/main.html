@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <style>
+        a {
+            font-size: 50px;
+        }
+        .taskno{
+            font-size: 40px;
+        }
+        .taskdata{
+            font-size: 30px;
+        }
+        .header{
+            font-size: 60px;
+            align-self:center;
+        }
+        .button{
+
+            font-size: 20px;
+            background-color: #d5f4e6;
+
+        }
+        p{
+            font-size: 50px;
+        }
+        .box{
+            font-size: 40px;
+        }
+        .buttons{
+            align-self: center;
+        }
+        body{
+            background-color: #d5f4e6;
+        }
+        a.button{ font-size:35px; display:inline-block; width:180px; height:40px; padding:4px; border:1.5px #D7D7D7 solid; text-align:center; text-decoration:none; color:#666666; background:url(button_bg.png) repeat-x; border-color: black;} a.button:hover{ background:url(button_bg_hover.png) repeat-x; text-decoration:none; }
+
+    </style>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <center><h1 class="header">Hello, {{user.first_name}}</h1>
+    <div class="buttons">
+        <a class="button" href='/'>Logout</a>
+    </div>
+
+    {% endif %}
+    <br>
+
+
+
+    <div class="box">
+        {% for tasks in tasks.all %}
+        {% if tasks.name == user.first_name %}
+            <b><p class="taskno">{{tasks}}</p></b>
+            <p class="taskdata">Assigner : {{tasks.assigner}}</p>
+            <p class="taskdata">For {{tasks.name}}</p>
+            <p class="taskdata">Description : {{tasks.desc}}</p>
+            <p class="taskdata">Date task was Set : {{tasks.dateon}}</p>
+            <p class="taskdata">Due Date : {{tasks.duedate}}</p>
+            <p class="taskdata">Status : {{tasks.status}}</p>
+        {% else %}
+        <h2>You do not have any tasks to complete!</h2>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    </center>
+
+    <!-- Tasks -->
+    <!--<div class="tasks">
+        <div class="tasks content">
+            <div class="task name"><a>Person Doing Task : {{tasks.name}}</a></div>
+            <div class="task assigner"><a>Task Assigner : {{tasks.assigner}}</a></div>
+            <div class="task id"><a>Task ID : {{tasks.id}}</a></div>
+            <div class="task date"><a>Task Due Date : {{tasks.date}}</a></div>
+            <div class="task desc"><a>Task Description : {{tasks.desc}}</a></div>
+            <div class="task status"><a>Task Status : {{tasks.status}}</a></div>
+        </div>
+    </div> -->
+</body>
+</html>
+
+{% endblock %}
