@@ -9,34 +9,54 @@
 <head>
     <title>Home</title>
     <style>
-        .test {
-            color: black;
-            font-family:"Comic Sans MS";
-        }
-        button {
-            font-size: 30px;
-            background-color: #d5f4e6;
-        }
         body{
-            background-color: #d5f4e6;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #34495e;
         }
         .buttons{
-            align-self: center;
+            width: 700px;
+            padding: 40px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #191919;
+            text-align: center;
         }
-        h1{
-            font-size: 70px;
+        .buttons h1{
+            font-size: 60px;
+            color:white;
+            font-weight: 500;
         }
-        a.button{ font-size:45px; display:inline-block; width:240px; height:60px; padding:5px; border:1.5px #D7D7D7 solid; text-align:center; text-decoration:none; color:#666666; background:url(button_bg.png) repeat-x; border-color: black;} a.button:hover{ background:url(button_bg_hover.png) repeat-x; text-decoration:none; }
-
-
+        .buttons a{
+            border:0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+            text-decoration: none;
+        }
+        .buttons a:hover{
+            width:250px;
+            border-color: #2ecc71;
+        }
     </style>
 </head>
 <body>
     
-
-    <center><h1 class="test">Welcome to Task Manager</h1>
-
     <div class="buttons">
+    <h1>Welcome to Task Manager</h1>
+
+
         <a class="button" href='accounts/login'>Login</a>
         <a class="button" href='accounts/register'>Register</a>
         <a class="button" href='/admin'>Admin</a>
