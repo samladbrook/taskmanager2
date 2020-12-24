@@ -31,6 +31,10 @@
         }
         .box{
             font-size: 40px;
+            align-self: center;
+            background-color: #666666;
+            width: 50%;
+            border-radius: 25px;
         }
         .buttons{
             align-self: center;
@@ -64,7 +68,7 @@
             <p class="taskdata">Date task was Set : {{tasks.dateon}}</p>
             <p class="taskdata">Due Date : {{tasks.duedate}}</p>
             <p class="taskdata">Status : {{tasks.status}}</p>
-        {% else %}
+        {% elif tasknum == 0 %}
         <h2>You do not have any tasks to complete!</h2>
         {% endif %}
         {% endfor %}

@@ -10,7 +10,7 @@ def home(request):
 def main(request):
 
     tasks = Tasks.objects
-
+    tasknum = 0
     return render(request, 'main.html', { 'tasks':tasks })
 
 
